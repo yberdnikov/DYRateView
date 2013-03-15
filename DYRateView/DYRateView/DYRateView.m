@@ -169,9 +169,9 @@ static NSString *DefaultEmptyStarImageFilename = @"StarEmpty.png";
 }
 
 - (void)handleTouchAtLocation:(CGPoint)location {
-    for(int i = _numOfStars - 1; i > -1; i--) {
+    for(CGFloat i = _numOfStars - 0.5; i > -0.5f; i = i - 0.5f) {
         if (location.x > _origin.x + i * (_fullStarImage.size.width + _padding) - _padding / 2.) {
-            self.rate = i + 1;
+            self.rate = i + 0.5f;
             return;
         }
     }
